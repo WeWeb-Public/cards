@@ -11,7 +11,6 @@
 			</div>
 		</div>
 
-		content count : {{section.data.columnCount}}
 		<!--THUMBNAILS-->
 		<div class="container">
 			<div class="container-center">
