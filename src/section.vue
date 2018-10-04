@@ -38,44 +38,62 @@
 
 <script>
 export default {
-	name: "feature_C",
-	props: {
-		section: Object
-	},
-	methods: {
-		init() {
-			let thumbnailContainers = this.$el.querySelectorAll('.thumbnail-container');
-			//this.section.data.columnCount = 2
-			switch (parseInt(this.section.data.columnCount)) {
-				case 4:
-					for (let thumbnailContainer of thumbnailContainers) {
-						thumbnailContainer.style.width = 'calc(25% - 30px)';
-						thumbnailContainer.style.marginRight = '30px';
-					}
-					break;
-				case 3:
-					for (let thumbnailContainer of thumbnailContainers) {
-						thumbnailContainer.style.width = 'calc(33.3333% - 30px)';
-						thumbnailContainer.style.marginRight = '30px';
-					}
-					break;
-				case 2:
-					for (let thumbnailContainer of thumbnailContainers) {
-						thumbnailContainer.style.width = 'calc(50% - 30px)';
-						thumbnailContainer.style.marginRight = '30px';
-					}
-					break;
+  name: "feature_C",
+  props: {
+    section: Object
+  },
+  methods: {
+    init() {
+      this.updateThumbnailContainer();
+      window.addEventListener("resize", this.updateThumbnailContainer);
+    },
+    updateThumbnailContainer() {
+      let thumbnailContainers = this.$el.querySelectorAll(
+        ".thumbnail-container"
+      );
+      let columnCount = 1;
+      if (window.innerWidth > 768) {
+        columnCount = this.section.data.columnCount;
+      }
+      console.log("weijijweijf", columnCount);
+      switch (parseInt(columnCount)) {
+        case 4:
+          for (let thumbnailContainer of thumbnailContainers) {
+            thumbnailContainer.style.width = "calc(25% - 30px)";
+            thumbnailContainer.style.marginRight = "30px";
+          }
+          break;
+        case 3:
+          for (let thumbnailContainer of thumbnailContainers) {
+            thumbnailContainer.style.width = "calc(33.3333% - 30px)";
+            thumbnailContainer.style.marginRight = "30px";
+          }
+          break;
+        case 2:
+          for (let thumbnailContainer of thumbnailContainers) {
+            thumbnailContainer.style.width = "calc(50% - 30px)";
+            thumbnailContainer.style.marginRight = "30px";
+          }
+          break;
+        case 1:
+          for (let thumbnailContainer of thumbnailContainers) {
+            thumbnailContainer.style.width = "calc(100% - 30px)";
+            thumbnailContainer.style.marginRight = "30px";
+          }
+          break;
 
-				default:
-					break;
-			}
-
-		}
-	},
-	created: function () { },
-	mounted: function () {
-		this.init()
-	}
+        default:
+          break;
+      }
+    }
+  },
+  created: function() {},
+  mounted: function() {
+    this.init();
+  },
+  beforeDestroyed() {
+    window.removeEventListener("resize", this.updateThumbnailContainer);
+  }
 };
 </script>
 
