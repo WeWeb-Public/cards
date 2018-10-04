@@ -1,81 +1,81 @@
 <template>
 
-  <div class="feature_C section-side-padding">
-    <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
-    </wwObject>
+	<div class="feature_C section-side-padding">
+		<wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
+		</wwObject>
 
-    <!--TOP WWOBJS-->
-    <div class="top-ww-objs">
-      <div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
-        <wwObject v-bind:ww-object="topWwObj"></wwObject>
-      </div>
-    </div>
+		<!--TOP WWOBJS-->
+		<div class="top-ww-objs">
+			<div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
+				<wwObject v-bind:ww-object="topWwObj"></wwObject>
+			</div>
+		</div>
 
-    <!--THUMBNAILS-->
-    <div class="container">
-      <div class="container-center">
-        <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
-          <div>
-            <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
-            <div class="content" v-for="content in thumbnail" :key="content.uniqueId">
-              <wwObject v-bind:ww-object="content"></wwObject>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<!--THUMBNAILS-->
+		<div class="container">
+			<div class="container-center">
+				<div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
+					<div>
+						<wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
+						<div class="content" v-for="content in thumbnail" :key="content.uniqueId">
+							<wwObject v-bind:ww-object="content"></wwObject>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!--BOTTOM WWOBJS-->
-    <div class="bottom-ww-objs">
-      <div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
-        <wwObject v-bind:ww-object="bottomWwObj"></wwObject>
-      </div>
-    </div>
+		<!--BOTTOM WWOBJS-->
+		<div class="bottom-ww-objs">
+			<div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
+				<wwObject v-bind:ww-object="bottomWwObj"></wwObject>
+			</div>
+		</div>
 
-  </div>
+	</div>
 
 </template>
 
 <script>
 export default {
-  name: "feature_C",
-  props: {
-    section: Object
-  },
-  methods: {
-    init() {
-      let thumbnailContainers = this.$el.querySelectorAll('.thumbnail-container');
-      this.section.data.columnCount = 2
-      switch (parseInt(this.section.data.columnCount)) {
-        case 4:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = 'calc(25% - 30px)';
-            thumbnailContainer.style.marginRight = '30px';
-          }
-          break;
-        case 3:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = 'calc(33.3333% - 30px)';
-            thumbnailContainer.style.marginRight = '30px';
-          }
-          break;
-        case 2:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = 'calc(50% - 30px)';
-            thumbnailContainer.style.marginRight = '30px';
-          }
-          break;
+	name: "feature_C",
+	props: {
+		section: Object
+	},
+	methods: {
+		init() {
+			let thumbnailContainers = this.$el.querySelectorAll('.thumbnail-container');
+			//this.section.data.columnCount = 2
+			switch (parseInt(this.section.data.columnCount)) {
+				case 4:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = 'calc(25% - 30px)';
+						thumbnailContainer.style.marginRight = '30px';
+					}
+					break;
+				case 3:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = 'calc(33.3333% - 30px)';
+						thumbnailContainer.style.marginRight = '30px';
+					}
+					break;
+				case 2:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = 'calc(50% - 30px)';
+						thumbnailContainer.style.marginRight = '30px';
+					}
+					break;
 
-        default:
-          break;
-      }
+				default:
+					break;
+			}
 
-    }
-  },
-  created: function () { },
-  mounted: function () {
-    this.init()
-  }
+		}
+	},
+	created: function () { },
+	mounted: function () {
+		this.init()
+	}
 };
 </script>
 
