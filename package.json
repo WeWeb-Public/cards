@@ -8,6 +8,7 @@
     "serve": "webpack-dev-server -d --inline"
   },
   "dependencies": {
+    "pako": "^1.0.6",
     "vue": "^2.5.16",
     "weweb-strip-block": "^0.0.1"
   },

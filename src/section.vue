@@ -37,6 +37,7 @@
 </template>
 
 <script>
+const pako = require("pako");
 export default {
   name: "feature_C",
   props: {
@@ -46,6 +47,8 @@ export default {
     init() {
       this.updateThumbnailContainer();
       window.addEventListener("resize", this.updateThumbnailContainer);
+      console.log("RUN TEST");
+      this.test();
     },
     updateThumbnailContainer() {
       let thumbnailContainers = this.$el.querySelectorAll(
@@ -55,7 +58,6 @@ export default {
       if (window.innerWidth > 768) {
         columnCount = this.section.data.columnCount;
       }
-      console.log("weijijweijf", columnCount);
       switch (parseInt(columnCount)) {
         case 4:
           for (let thumbnailContainer of thumbnailContainers) {
@@ -85,6 +87,102 @@ export default {
         default:
           break;
       }
+    },
+    async test() {
+      const count = 500;
+      let jsonTotal = 0;
+      let jsonCompressedTotal = 0;
+      let jsonOfflineTotal = 0;
+
+      for (let i = 0; i < count; i++) {
+        if (i % 10 == 0) {
+          console.log(i);
+        }
+        jsonTotal += await this.testJSON();
+        jsonCompressedTotal += await this.testJSONCompressed();
+        jsonOfflineTotal += await this.testJSONCompressedOffline();
+      }
+
+      // console.log("json : ", jsonTotal / count);
+      // console.log("jsonCompressed : ", jsonCompressedTotal / count);
+      alert(
+        "Results : \nJSON : " +
+          jsonTotal / count +
+          "ms\nJSON Compressed : " +
+          jsonCompressedTotal / count +
+          "ms\nJSON Offline : " +
+          jsonOfflineTotal / count +
+          "ms"
+      );
+    },
+    async testJSON() {
+      let jsonURL = "https://s3-eu-west-1.amazonaws.com/wewebdev/data-big.json";
+      try {
+        var start = new Date().getTime();
+        let jsonNormal = await axios.get(jsonURL);
+        var end = new Date().getTime();
+        var time = end - start;
+        return time;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async testJSONCompressed() {
+      let jsonURLCompressed =
+        "https://s3-eu-west-1.amazonaws.com/wewebdev/data-compressed.gzip";
+      try {
+        // let jsonNormal = await axios.get(jsonURL);
+
+        // let binaryString = pako.deflate(JSON.stringify(jsonNormal.data), {
+        //   to: "string"
+        // });
+        // this.download("data-compressed.gzip", binaryString);
+
+        var start = new Date().getTime();
+        let string = await axios.get(jsonURLCompressed);
+        let restored = JSON.parse(pako.inflate(string.data, { to: "string" }));
+        var end = new Date().getTime();
+        var time = end - start;
+        return time;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async testJSONCompressedOffline() {
+      let jsonURLCompressed =
+        "https://s3-eu-west-1.amazonaws.com/wewebdev/data-compressed.gzip";
+      try {
+        // let jsonNormal = await axios.get(jsonURL);
+
+        // let binaryString = pako.deflate(JSON.stringify(jsonNormal.data), {
+        //   to: "string"
+        // });
+        // this.download("data-compressed.gzip", binaryString);
+
+        let string = await axios.get(jsonURLCompressed);
+        var start = new Date().getTime();
+        let restored = JSON.parse(pako.inflate(string.data, { to: "string" }));
+        var end = new Date().getTime();
+        var time = end - start;
+        return time;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    download(filename, text) {
+      var element = document.createElement("a");
+      element.setAttribute(
+        "href",
+        "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+      );
+      element.setAttribute("download", filename);
+
+      element.style.display = "none";
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
     }
   },
   created: function() {},
