@@ -1,24 +1,24 @@
 <template>
 
 	<div class="feature_C section-side-padding">
-		<wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
+		<wwObject class="background" v-bind:ww-object-ref="section.data.background" ww-category="background">
 		</wwObject>
 
 		<!--TOP WWOBJS-->
 		<div class="top-ww-objs">
 			<div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
-				<wwObject v-bind:ww-object="topWwObj"></wwObject>
+				<wwObject v-bind:ww-object-ref="topWwObj"></wwObject>
 			</div>
 		</div>
 
 		<!--THUMBNAILS-->
-		<div class="container">
+		<div class="container" @click='test'>
 			<div class="container-center">
 				<div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
 					<div>
-						<wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
+						<wwObject class="background" v-bind:ww-object-ref="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
 						<div class="content" v-for="content in thumbnail" :key="content.uniqueId">
-							<wwObject v-bind:ww-object="content"></wwObject>
+							<wwObject v-bind:ww-object-ref="content"></wwObject>
 						</div>
 					</div>
 				</div>
@@ -28,7 +28,7 @@
 		<!--BOTTOM WWOBJS-->
 		<div class="bottom-ww-objs">
 			<div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
-				<wwObject v-bind:ww-object="bottomWwObj"></wwObject>
+				<wwObject v-bind:ww-object-ref="bottomWwObj"></wwObject>
 			</div>
 		</div>
 
@@ -37,161 +37,74 @@
 </template>
 
 <script>
-const pako = require("pako");
+
 export default {
-  name: "feature_C",
-  props: {
-    section: Object
-  },
-  methods: {
-    init() {
-      this.updateThumbnailContainer();
-      window.addEventListener("resize", this.updateThumbnailContainer);
-      console.log("RUN TEST");
-      this.test();
-    },
-    updateThumbnailContainer() {
-      let thumbnailContainers = this.$el.querySelectorAll(
-        ".thumbnail-container"
-      );
-      let columnCount = 1;
-      if (window.innerWidth > 768) {
-        columnCount = this.section.data.columnCount;
-      }
-      switch (parseInt(columnCount)) {
-        case 4:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(25% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 3:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(33.3333% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 2:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(50% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 1:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(100% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
+	name: "feature_C",
+	props: {
+		sectionRef: Object
+	},
+	data() {
+		return {
+		}
+	},
+	computed: {
+		section() {
+			//return this.sectionRef.wwGet();
+			return this.$store.state.sections[this.sectionRef.id];
+		}
+	},
+	methods: {
+		init() {
+			this.updateThumbnailContainer();
+			window.addEventListener("resize", this.updateThumbnailContainer);
+			console.log("RUN TEST");
+		},
+		updateThumbnailContainer() {
+			let thumbnailContainers = this.$el.querySelectorAll(
+				".thumbnail-container"
+			);
+			let columnCount = 1;
+			if (window.innerWidth > 768) {
+				columnCount = this.section.data.columnCount;
+			}
+			switch (parseInt(columnCount)) {
+				case 4:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = "calc(25% - 30px)";
+						thumbnailContainer.style.marginRight = "30px";
+					}
+					break;
+				case 3:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = "calc(33.3333% - 30px)";
+						thumbnailContainer.style.marginRight = "30px";
+					}
+					break;
+				case 2:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = "calc(50% - 30px)";
+						thumbnailContainer.style.marginRight = "30px";
+					}
+					break;
+				case 1:
+					for (let thumbnailContainer of thumbnailContainers) {
+						thumbnailContainer.style.width = "calc(100% - 30px)";
+						thumbnailContainer.style.marginRight = "30px";
+					}
+					break;
 
-        default:
-          break;
-      }
-    },
-    async test() {
-      const count = 500;
-      let jsonTotal = 0;
-      let jsonCompressedTotal = 0;
-      let jsonOfflineTotal = 0;
-
-      for (let i = 0; i < count; i++) {
-        if (i % 10 == 0) {
-          console.log(i);
-        }
-        jsonTotal += await this.testJSON();
-        jsonCompressedTotal += await this.testJSONCompressed();
-        jsonOfflineTotal += await this.testJSONCompressedOffline();
-      }
-
-      // console.log("json : ", jsonTotal / count);
-      // console.log("jsonCompressed : ", jsonCompressedTotal / count);
-      alert(
-        "Results : \nJSON : " +
-          jsonTotal / count +
-          "ms\nJSON Compressed : " +
-          jsonCompressedTotal / count +
-          "ms\nJSON Offline : " +
-          jsonOfflineTotal / count +
-          "ms"
-      );
-    },
-    async testJSON() {
-      let jsonURL = "https://s3-eu-west-1.amazonaws.com/wewebdev/data-big.json";
-      try {
-        var start = new Date().getTime();
-        let jsonNormal = await axios.get(jsonURL);
-        var end = new Date().getTime();
-        var time = end - start;
-        return time;
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    async testJSONCompressed() {
-      let jsonURLCompressed =
-        "https://s3-eu-west-1.amazonaws.com/wewebdev/data-compressed.gzip";
-      try {
-        // let jsonNormal = await axios.get(jsonURL);
-
-        // let binaryString = pako.deflate(JSON.stringify(jsonNormal.data), {
-        //   to: "string"
-        // });
-        // this.download("data-compressed.gzip", binaryString);
-
-        var start = new Date().getTime();
-        let string = await axios.get(jsonURLCompressed);
-        let restored = JSON.parse(pako.inflate(string.data, { to: "string" }));
-        var end = new Date().getTime();
-        var time = end - start;
-        return time;
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    async testJSONCompressedOffline() {
-      let jsonURLCompressed =
-        "https://s3-eu-west-1.amazonaws.com/wewebdev/data-compressed.gzip";
-      try {
-        // let jsonNormal = await axios.get(jsonURL);
-
-        // let binaryString = pako.deflate(JSON.stringify(jsonNormal.data), {
-        //   to: "string"
-        // });
-        // this.download("data-compressed.gzip", binaryString);
-
-        let string = await axios.get(jsonURLCompressed);
-        var start = new Date().getTime();
-        let restored = JSON.parse(pako.inflate(string.data, { to: "string" }));
-        var end = new Date().getTime();
-        var time = end - start;
-        return time;
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    download(filename, text) {
-      var element = document.createElement("a");
-      element.setAttribute(
-        "href",
-        "data:text/plain;charset=utf-8," + encodeURIComponent(text)
-      );
-      element.setAttribute("download", filename);
-
-      element.style.display = "none";
-      document.body.appendChild(element);
-
-      element.click();
-
-      document.body.removeChild(element);
-    }
-  },
-  created: function() {},
-  mounted: function() {
-    this.init();
-  },
-  beforeDestroyed() {
-    window.removeEventListener("resize", this.updateThumbnailContainer);
-  }
+				default:
+					break;
+			}
+		}
+	},
+	created: function () { },
+	mounted: function () {
+		this.init();
+	},
+	beforeDestroyed() {
+		window.removeEventListener("resize", this.updateThumbnailContainer);
+	}
 };
 </script>
 
