@@ -1,106 +1,119 @@
 <template>
 
-  <div class="feature_C section-side-padding">
-    <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
-    </wwObject>
+    <div class="feature_C section-side-padding">
+        <wwObject class="background" v-bind:ww-object="section.data.background" v-bind:section="section" ww-category="background">
+        </wwObject>
 
-    <!--TOP WWOBJS-->
-    <div class="top-ww-objs">
-      <div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
-        <wwObject v-bind:ww-object="topWwObj"></wwObject>
-      </div>
-    </div>
-
-    <!--THUMBNAILS-->
-    <div class="container">
-      <div class="container-center">
-        <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
-          <div>
-            <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
-            <div class="content" v-for="content in thumbnail" :key="content.uniqueId">
-              <wwObject v-bind:ww-object="content"></wwObject>
+        <!--TOP WWOBJS-->
+        <div class="top-ww-objs">
+            <div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
+                <wwObject v-bind:ww-object="topWwObj" v-bind:section="section"></wwObject>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <!--BOTTOM WWOBJS-->
-    <div class="bottom-ww-objs">
-      <div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
-        <wwObject v-bind:ww-object="bottomWwObj"></wwObject>
-      </div>
-    </div>
+        <!--THUMBNAILS-->
+        <div class="container">
+            <div class="container-center">
+                <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
+                    <div>
+                        <wwObject class="background" v-bind:ww-object="thumbnail.background" v-bind:section="section" ww-category="background" ww-default-object-type="ww-color"></wwObject>
+                        <div class="content" v-for="content in thumbnail.contents" :key="content.uniqueId">
+                            <wwObject v-bind:ww-object="content" v-bind:section="section"></wwObject>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  </div>
+        <!--BOTTOM WWOBJS-->
+        <div class="bottom-ww-objs">
+            <div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
+                <wwObject v-bind:ww-object="bottomWwObj" v-bind:section="section"></wwObject>
+            </div>
+        </div>
+
+    </div>
 
 </template>
 
 <script>
 
 export default {
-  name: "feature_C",
-  props: {
-    section: Object
-  },
-  data() {
-    return {
-    }
-  },
-  computed: {
-  },
-  methods: {
-    init() {
-      this.updateThumbnailContainer();
-      window.addEventListener("resize", this.updateThumbnailContainer);
-      console.log("RUN TEST");
+    name: "feature_C",
+    props: {
+        section: Object
     },
-    updateThumbnailContainer() {
-      let thumbnailContainers = this.$el.querySelectorAll(
-        ".thumbnail-container"
-      );
-      let columnCount = 1;
-      if (window.innerWidth > 768) {
-        columnCount = this.section.data.columnCount;
-      }
-      switch (parseInt(columnCount)) {
-        case 4:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(25% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 3:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(33.3333% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 2:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(50% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
-        case 1:
-          for (let thumbnailContainer of thumbnailContainers) {
-            thumbnailContainer.style.width = "calc(100% - 30px)";
-            thumbnailContainer.style.marginRight = "30px";
-          }
-          break;
+    data() {
+        return {
+        }
+    },
+    computed: {
+    },
+    methods: {
+        init() {
 
-        default:
-          break;
-      }
+
+
+            this.updateThumbnailContainer();
+            window.addEventListener("resize", this.updateThumbnailContainer);
+            console.log("RUN TEST");
+        },
+        updateThumbnailContainer() {
+            let thumbnailContainers = this.$el.querySelectorAll(
+                ".thumbnail-container"
+            );
+            let columnCount = 1;
+            if (window.innerWidth > 768) {
+                columnCount = this.section.data.columnCount;
+            }
+            switch (parseInt(columnCount)) {
+                case 4:
+                    for (let thumbnailContainer of thumbnailContainers) {
+                        thumbnailContainer.style.width = "calc(25% - 30px)";
+                        thumbnailContainer.style.marginRight = "30px";
+                    }
+                    break;
+                case 3:
+                    for (let thumbnailContainer of thumbnailContainers) {
+                        thumbnailContainer.style.width = "calc(33.3333% - 30px)";
+                        thumbnailContainer.style.marginRight = "30px";
+                    }
+                    break;
+                case 2:
+                    for (let thumbnailContainer of thumbnailContainers) {
+                        thumbnailContainer.style.width = "calc(50% - 30px)";
+                        thumbnailContainer.style.marginRight = "30px";
+                    }
+                    break;
+                case 1:
+                    for (let thumbnailContainer of thumbnailContainers) {
+                        thumbnailContainer.style.width = "calc(100% - 30px)";
+                        thumbnailContainer.style.marginRight = "30px";
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    },
+    created: function () {
+        //Correct section data
+        for (let key in this.section.data.thumbnails) {
+            if (!this.section.data.thumbnails[key].contents) {
+                const temp = JSON.parse(JSON.stringify(this.section.data.thumbnails[key]));
+                this.section.data.thumbnails[key] = {};
+                this.section.data.thumbnails[key].background = wwLib.wwObject.getDefault();
+                this.section.data.thumbnails[key].contents = temp;
+            }
+        }
+    },
+    mounted: function () {
+        this.init();
+    },
+    beforeDestroyed() {
+        window.removeEventListener("resize", this.updateThumbnailContainer);
     }
-  },
-  created: function () { },
-  mounted: function () {
-    this.init();
-  },
-  beforeDestroyed() {
-    window.removeEventListener("resize", this.updateThumbnailContainer);
-  }
 };
 </script>
 
