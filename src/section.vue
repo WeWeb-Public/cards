@@ -1,6 +1,11 @@
 <template>
 
     <div class="feature_C section-side-padding">
+
+        <!-- wwManager:start -->
+        <wwSectionEditMenu v-bind:section="section"></wwSectionEditMenu>
+        <!-- wwManager:end -->
+
         <wwObject class="background" v-bind:ww-object="section.data.background" v-bind:section="section" ww-category="background">
         </wwObject>
 
