@@ -61,7 +61,6 @@ export default {
 
             this.updateThumbnailContainer();
             window.addEventListener("resize", this.updateThumbnailContainer);
-            console.log("RUN TEST");
         },
         updateThumbnailContainer() {
             let thumbnailContainers = this.$el.querySelectorAll(
