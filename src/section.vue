@@ -6,13 +6,13 @@
         <wwSectionEditMenu v-bind:section="section"></wwSectionEditMenu>
         <!-- wwManager:end -->
 
-        <wwObject class="background" v-bind:ww-object="section.data.background" v-bind:section="section" ww-category="background">
+        <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
         </wwObject>
 
         <!--TOP WWOBJS-->
         <div class="top-ww-objs">
             <div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
-                <wwObject v-bind:ww-object="topWwObj" v-bind:section="section"></wwObject>
+                <wwObject v-bind:ww-object="topWwObj"></wwObject>
             </div>
         </div>
 
@@ -21,9 +21,9 @@
             <div class="container-center">
                 <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
                     <div>
-                        <wwObject class="background" v-bind:ww-object="thumbnail.background" v-bind:section="section" ww-category="background" ww-default-object-type="ww-color"></wwObject>
+                        <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
                         <div class="content" v-for="content in thumbnail.contents" :key="content.uniqueId">
-                            <wwObject v-bind:ww-object="content" v-bind:section="section"></wwObject>
+                            <wwObject v-bind:ww-object="content"></wwObject>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
         <!--BOTTOM WWOBJS-->
         <div class="bottom-ww-objs">
             <div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
-                <wwObject v-bind:ww-object="bottomWwObj" v-bind:section="section"></wwObject>
+                <wwObject v-bind:ww-object="bottomWwObj"></wwObject>
             </div>
         </div>
 
@@ -46,10 +46,11 @@
 export default {
     name: "feature_C",
     props: {
-        section: Object
+        sectionCtrl: Object
     },
     data() {
         return {
+            section: this.sectionCtrl.get()
         }
     },
     computed: {
