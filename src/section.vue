@@ -3,7 +3,7 @@
     <div class="feature_C section-side-padding">
 
         <!-- wwManager:start -->
-        <wwSectionEditMenu v-bind:section="section"></wwSectionEditMenu>
+        <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
 
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background">
@@ -11,9 +11,9 @@
 
         <!--TOP WWOBJS-->
         <div class="top-ww-objs">
-            <div class="top-ww-obj" v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId">
-                <wwObject v-bind:ww-object="topWwObj"></wwObject>
-            </div>
+            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.topWwObjs" class="top-ww-obj">
+                <wwObject v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId" v-bind:ww-object="topWwObj"></wwObject>
+            </wwLayoutColumn>
         </div>
 
         <!--THUMBNAILS-->
@@ -22,9 +22,10 @@
                 <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
                     <div>
                         <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
-                        <div class="content" v-for="content in thumbnail.contents" :key="content.uniqueId">
-                            <wwObject v-bind:ww-object="content"></wwObject>
-                        </div>
+
+                        <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="thumbnail.contents" class="content">
+                            <wwObject v-for="content in thumbnail.contents" :key="content.uniqueId" v-bind:ww-object="topWwObj"></wwObject>
+                        </wwLayoutColumn>
                     </div>
                 </div>
             </div>
@@ -32,9 +33,9 @@
 
         <!--BOTTOM WWOBJS-->
         <div class="bottom-ww-objs">
-            <div class="top-ww-obj" v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId">
-                <wwObject v-bind:ww-object="bottomWwObj"></wwObject>
-            </div>
+            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.bottomWwObjs" class="top-ww-obj">
+                <wwObject v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId" v-bind:ww-object="bottomWwObj"></wwObject>
+            </wwLayoutColumn>
         </div>
 
     </div>
@@ -50,15 +51,15 @@ export default {
     },
     data() {
         return {
-            section: this.sectionCtrl.get()
         }
     },
     computed: {
+        section() {
+            return this.sectionCtrl.get();
+        }
     },
     methods: {
         init() {
-
-
 
             this.updateThumbnailContainer();
             window.addEventListener("resize", this.updateThumbnailContainer);
