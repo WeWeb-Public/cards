@@ -11,7 +11,7 @@
 
         <!--TOP WWOBJS-->
         <div class="top-ww-objs">
-            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.topWwObjs" class="top-ww-obj">
+            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.topWwObjs" class="top-ww-obj" @ww-add="add(section.data.topWwObjs, $event)" @ww-remove="remove(section.data.topWwObjs, $event)">
                 <wwObject v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId" v-bind:ww-object="topWwObj"></wwObject>
             </wwLayoutColumn>
         </div>
@@ -19,12 +19,12 @@
         <!--THUMBNAILS-->
         <div class="container">
             <div class="container-center">
-                <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId">
+                <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId" v-bind:style="columnWidth">
                     <div>
                         <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
 
-                        <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="thumbnail.contents" class="content">
-                            <wwObject v-for="content in thumbnail.contents" :key="content.uniqueId" v-bind:ww-object="topWwObj"></wwObject>
+                        <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="thumbnail.contents" class="content" @ww-add="add(thumbnail.contents, $event)" @ww-remove="remove(thumbnail.contents, $event)">
+                            <wwObject v-for="content in thumbnail.contents" :key="content.uniqueId" v-bind:ww-object="content"></wwObject>
                         </wwLayoutColumn>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
 
         <!--BOTTOM WWOBJS-->
         <div class="bottom-ww-objs">
-            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.bottomWwObjs" class="top-ww-obj">
+            <wwLayoutColumn tag='div' ww-default="ww-image" :ww-list="section.data.bottomWwObjs" class="top-ww-obj" @ww-add="add(section.data.bottomWwObjs, $event)" @ww-remove="remove(section.data.bottomWwObjs, $event)">
                 <wwObject v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId" v-bind:ww-object="bottomWwObj"></wwObject>
             </wwLayoutColumn>
         </div>
@@ -56,46 +56,20 @@ export default {
     computed: {
         section() {
             return this.sectionCtrl.get();
-        }
-    },
-    methods: {
-        init() {
-
-            this.updateThumbnailContainer();
-            window.addEventListener("resize", this.updateThumbnailContainer);
         },
-        updateThumbnailContainer() {
-            let thumbnailContainers = this.$el.querySelectorAll(
-                ".thumbnail-container"
-            );
-            let columnCount = 1;
-            if (window.innerWidth > 768) {
-                columnCount = this.section.data.columnCount;
-            }
-            switch (parseInt(columnCount)) {
+        columnWidth() {
+            switch (this.section.data.thumbnails.length) {
                 case 4:
-                    for (let thumbnailContainer of thumbnailContainers) {
-                        thumbnailContainer.style.width = "calc(25% - 30px)";
-                        thumbnailContainer.style.marginRight = "30px";
-                    }
+                    return { 'width': "calc(25% - 30px)" };
                     break;
                 case 3:
-                    for (let thumbnailContainer of thumbnailContainers) {
-                        thumbnailContainer.style.width = "calc(33.3333% - 30px)";
-                        thumbnailContainer.style.marginRight = "30px";
-                    }
+                    return { 'width': "calc(33.3333% - 30px)" };
                     break;
                 case 2:
-                    for (let thumbnailContainer of thumbnailContainers) {
-                        thumbnailContainer.style.width = "calc(50% - 30px)";
-                        thumbnailContainer.style.marginRight = "30px";
-                    }
+                    return { 'width': "calc(50% - 30px)" };
                     break;
                 case 1:
-                    for (let thumbnailContainer of thumbnailContainers) {
-                        thumbnailContainer.style.width = "calc(100% - 30px)";
-                        thumbnailContainer.style.marginRight = "30px";
-                    }
+                    return { 'width': "calc(100% - 30px)" };
                     break;
 
                 default:
@@ -103,16 +77,68 @@ export default {
             }
         }
     },
-    created: function () {
-        //Correct section data
-        for (let key in this.section.data.thumbnails) {
-            if (!this.section.data.thumbnails[key].contents) {
-                const temp = JSON.parse(JSON.stringify(this.section.data.thumbnails[key]));
-                this.section.data.thumbnails[key] = {};
-                this.section.data.thumbnails[key].background = wwLib.wwObject.getDefault();
-                this.section.data.thumbnails[key].contents = temp;
+    methods: {
+        initData() {
+            let needUpdate = false;
+            for (let key in this.section.data.thumbnails) {
+                if (!this.section.data.thumbnails[key].contents) {
+                    const temp = JSON.parse(JSON.stringify(this.section.data.thumbnails[key]));
+                    this.section.data.thumbnails[key] = {};
+                    this.section.data.thumbnails[key].background = wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } });
+                    this.section.data.thumbnails[key].contents = temp;
+                    needUpdate = true;
+                }
             }
+
+            //Init objects
+            if (!this.section.data.background) {
+                this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } });
+                needUpdate = true;
+            }
+            if (_.isEmpty(this.section.data.topWwObjs)) {
+                this.section.data.topWwObjs = [];
+                needUpdate = true;
+            }
+            if (_.isEmpty(this.section.data.bottomWwObjs)) {
+                this.section.data.bottomWwObjs = [];
+                needUpdate = true;
+            }
+            if (_.isEmpty(this.section.data.thumbnails)) {
+                this.section.data.thumbnails = [];
+                needUpdate = true;
+            }
+            if (_.isEmpty(this.section.data.thumbnails)) {
+                let cards = 4;
+
+                for (let i = 0; i < cards; i++) {
+                    this.section.data.thumbnails.push({
+                        background: wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } }),
+                        contents: []
+                    })
+                }
+
+                needUpdate = true;
+            }
+            if (needUpdate) {
+                this.sectionCtrl.update(this.section);
+            }
+        },
+        init() {
+            window.addEventListener("resize", this.updateThumbnailContainer);
+        },
+        add(list, options) {
+            list.splice(options.index, 0, options.wwObject);
+
+            this.sectionCtrl.update(this.section);
+        },
+        remove(list, options) {
+            list.splice(options.index, 1);
+
+            this.sectionCtrl.update(this.section);
         }
+    },
+    created() {
+        this.initData();
     },
     mounted: function () {
         this.init();
@@ -174,6 +200,11 @@ export default {
   z-index: 2;
 }
 
+.top-ww-objs,
+.bottom-ww-objs {
+  position: relative;
+}
+
 .feature_C .top-ww-obj,
 .bottom-ww-obj {
   position: relative;
@@ -206,8 +237,9 @@ export default {
 }
 
 .feature_C .thumbnail-container {
+  margin-right: 15px;
   position: relative;
-  margin-bottom: 30px;
+  margin: 30px 15px;
   background-color: white;
   min-height: 50px;
   box-shadow: 0 10px 40px 0 rgba(113, 124, 137, 0.2);
