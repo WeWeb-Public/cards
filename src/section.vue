@@ -1,7 +1,7 @@
 <template>
     <div class="feature_C section-side-padding">
         <!-- wwManager:start -->
-        <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
+        <wwSectionEditMenu :sectionCtrl="sectionCtrl" :options="openOptions"></wwSectionEditMenu>
         <!-- wwManager:end -->
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
 
@@ -37,6 +37,27 @@
 </template>
 
 <script>
+
+/* wwManager:start */
+import featureCColumnPerLine from './featureCColumnPerLine.vue'
+wwLib.wwPopups.addPopup('featureCColumnPerLine', featureCColumnPerLine);
+wwLib.wwPopups.addStory('FEATURE_C_COLUMN_COUNT', {
+    title: {
+        en_GB: 'Column per line',
+        fr_FR: 'Nombre de colonnes par ligne'
+    },
+    type: 'featureCColumnPerLine',
+    buttons: {
+        FINISH: {
+            text: {
+                en_GB: 'Finish',
+                fr_FR: 'Terminer'
+            },
+            next: false
+        }
+    }
+});
+/* wwManager:end */
 
 export default {
     name: "feature_C",
@@ -144,7 +165,29 @@ export default {
                     this.columnWidth = { 'width': "calc(25% - 30px)" };
                     break;
             }
+        },
+
+        /* wwManager:start */
+        async openOptions() {
+            let options = {
+                firstPage: 'FEATURE_C_COLUMN_COUNT',
+                data: {
+                    columnPerLine: this.thumbnailsPerLine
+                },
+            }
+
+            const result = await wwLib.wwPopups.open(options)
+
+            if (result.columnPerLine) {
+                this.thumbnailsPerLine = result.columnPerLine;
+
+                this.setThumbnailsPerLine();
+            }
+
+
+            console.log(result);
         }
+        /* wwManager:end */
     },
     created() {
         this.initData();
