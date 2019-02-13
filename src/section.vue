@@ -60,7 +60,7 @@ wwLib.wwPopups.addStory('FEATURE_C_COLUMN_COUNT', {
 /* wwManager:end */
 
 export default {
-    name: "feature_C",
+    name: "__COMPONENT_NAME__",
     props: {
         sectionCtrl: Object
     },
