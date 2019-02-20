@@ -3,26 +3,29 @@
         <!-- wwManager:start -->
         <wwSectionEditMenu :sectionCtrl="sectionCtrl" :options="openOptions"></wwSectionEditMenu>
         <!-- wwManager:end -->
-        <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
+        <wwObject class="background" :ww-object="section.data.background" ww-category="background"></wwObject>
 
         <!--TOP WWOBJS-->
         <div class="top-ww-objs">
             <wwLayoutColumn tag="div" ww-default="ww-image" :ww-list="section.data.topWwObjs" class="top-ww-obj" @ww-add="add(section.data.topWwObjs, $event)" @ww-remove="remove(section.data.topWwObjs, $event)">
-                <wwObject v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId" v-bind:ww-object="topWwObj"></wwObject>
+                <wwObject v-for="topWwObj in section.data.topWwObjs" :key="topWwObj.uniqueId" :ww-object="topWwObj"></wwObject>
             </wwLayoutColumn>
         </div>
 
         <!--THUMBNAILS-->
         <div class="container">
             <div class="container-center">
-                <div class="thumbnail-container" v-for="thumbnail in section.data.thumbnails" :key="thumbnail.uniqueId" v-bind:style="columnWidth">
-                    <div>
-                        <wwObject class="background" v-bind:ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
+                <div class="thumbnail-container" v-for="(thumbnail, index) in section.data.thumbnails" :key="thumbnail.uniqueId" :style="columnWidth">
+                    <!-- wwManager:start -->
+                    <wwContextMenu tag="div" class="contextmenu" v-if="sectionCtrl.getEditMode() == 'CONTENT'" @ww-add-before="addCardBefore(index)" @ww-add-after="addCardAfter(index)" @ww-remove="removeCard(index)">
+                        <div class="wwi wwi-config"></div>
+                    </wwContextMenu>
+                    <!-- wwManager:end -->
+                    <wwObject class="background" :ww-object="thumbnail.background" ww-category="background" ww-default-object-type="ww-color"></wwObject>
 
-                        <wwLayoutColumn tag="div" ww-default="ww-image" :ww-list="thumbnail.contents" class="content" @ww-add="add(thumbnail.contents, $event)" @ww-remove="remove(thumbnail.contents, $event)">
-                            <wwObject v-for="content in thumbnail.contents" :key="content.uniqueId" v-bind:ww-object="content"></wwObject>
-                        </wwLayoutColumn>
-                    </div>
+                    <wwLayoutColumn tag="div" ww-default="ww-image" :ww-list="thumbnail.contents" class="content" @ww-add="add(thumbnail.contents, $event)" @ww-remove="remove(thumbnail.contents, $event)">
+                        <wwObject v-for="content in thumbnail.contents" :key="content.uniqueId" :ww-object="content"></wwObject>
+                    </wwLayoutColumn>
                 </div>
             </div>
         </div>
@@ -30,7 +33,7 @@
         <!--BOTTOM WWOBJS-->
         <div class="bottom-ww-objs">
             <wwLayoutColumn tag="div" ww-default="ww-image" :ww-list="section.data.bottomWwObjs" class="top-ww-obj" @ww-add="add(section.data.bottomWwObjs, $event)" @ww-remove="remove(section.data.bottomWwObjs, $event)">
-                <wwObject v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId" v-bind:ww-object="bottomWwObj"></wwObject>
+                <wwObject v-for="bottomWwObj in section.data.bottomWwObjs" :key="bottomWwObj.uniqueId" :ww-object="bottomWwObj"></wwObject>
             </wwLayoutColumn>
         </div>
     </div>
@@ -79,15 +82,6 @@ export default {
     methods: {
         initData() {
             let needUpdate = false;
-            for (let key in this.section.data.thumbnails) {
-                if (!this.section.data.thumbnails[key].contents) {
-                    const temp = JSON.parse(JSON.stringify(this.section.data.thumbnails[key]));
-                    this.section.data.thumbnails[key] = {};
-                    this.section.data.thumbnails[key].background = wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } });
-                    this.section.data.thumbnails[key].contents = temp;
-                    needUpdate = true;
-                }
-            }
 
             //Init objects
             if (!this.section.data.background) {
@@ -107,15 +101,10 @@ export default {
                 needUpdate = true;
             }
             if (_.isEmpty(this.section.data.thumbnails)) {
-                let cards = 4;
-
-                for (let i = 0; i < cards; i++) {
-                    this.section.data.thumbnails.push({
-                        background: wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } }),
-                        contents: []
-                    })
-                }
-
+                this.section.data.thumbnails.push({
+                    background: wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } }),
+                    contents: []
+                })
                 needUpdate = true;
             }
             if (needUpdate) {
@@ -168,6 +157,31 @@ export default {
         },
 
         /* wwManager:start */
+        addCardBefore(index) {
+            const newCard = {
+                background: wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } }),
+                contents: []
+            }
+            this.section.data.thumbnails.splice(index, 0, newCard);
+            this.sectionCtrl.update(this.section);
+        },
+        addCardAfter(index) {
+            const newCard = {
+                background: wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } }),
+                contents: []
+            }
+            this.section.data.thumbnails.splice(index + 1, 0, newCard);
+            this.sectionCtrl.update(this.section);
+        },
+        removeCard(index) {
+            this.section.data.thumbnails.splice(index, 1);
+
+            if (!this.section.data.thumbnails.length) {
+                this.addCardAfter(0);
+            }
+            this.sectionCtrl.update(this.section);
+        },
+
         async openOptions() {
             let options = {
                 firstPage: 'FEATURE_C_COLUMN_COUNT',
@@ -202,189 +216,80 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 .feature_C {
     position: relative;
-}
-.feature_C .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
 
-.feature_C .add-ww-obj-container {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-    position: relative;
-}
-
-.feature_C .add-ww-obj-container .add-ww-obj {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.feature_C .remove-ww-obj {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    height: 30px;
-    width: 30px;
-    background-color: white;
-    color: #92979c;
-    box-shadow: 0px 1px 1px 0px #656565;
-    -moz-box-shadow: 0px 1px 1px 0px #656565;
-    -webkit-box-shadow: 0px 1px 1px 0px #656565;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.top-ww-objs,
-.bottom-ww-objs {
-    position: relative;
-}
-
-.feature_C .top-ww-obj,
-.bottom-ww-obj {
-    position: relative;
-}
-
-.feature_C .block .block-img-container {
-    height: 260px;
-    width: 100%;
-    /*overflow: hidden;*/
-    position: relative;
-}
-
-.feature_C .add-thumbnail-container {
-    padding: 30px;
-    text-align: center;
-}
-
-.feature_C .add-thumbnail {
-    display: inline-block;
-    background-color: white;
-    width: 150px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: #92979c;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    box-shadow: 0px 1px 1px 0px #656565;
-}
-
-.feature_C .thumbnail-container {
-    margin-right: 15px;
-    position: relative;
-    margin: 30px 15px;
-    background-color: white;
-    min-height: 50px;
-    box-shadow: 0 10px 40px 0 rgba(113, 124, 137, 0.2);
-    padding: 0 45px;
-    border-radius: 7px;
-    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-}
-
-.feature_C .thumbnail-container:hover {
-    box-shadow: 0 16px 32px rgba(113, 124, 137, 0.4);
-    transform: translateY(-10px);
-}
-
-.feature_C .thumbnail-container .background {
-    border-radius: 7px;
-    overflow: hidden;
-}
-
-.feature_C .remove-thumbnail {
-    position: absolute;
-    top: 0;
-    right: -20px;
-    transform: translate(calc(50% - 15px), -50%);
-    height: 30px;
-    width: 30px;
-    background-color: white;
-    color: #e83154;
-    box-shadow: 0px 1px 1px 0px #656565;
-    -moz-box-shadow: 0px 1px 1px 0px #656565;
-    -webkit-box-shadow: 0px 1px 1px 0px #656565;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.feature_C .thumbnail-container .content {
-    position: relative;
-}
-
-.popup-feature_C-column-count .radio-size {
-    height: 30px;
-    width: 250px;
-    margin-top: 30px;
-    display: inline-block;
-}
-
-.feature_C .card-container-for-two {
-    width: 80%;
-    margin-left: 10%;
-}
-
-.feature_C .card-container-for-three {
-    width: 90%;
-    margin-left: 5%;
-}
-
-.feature_C .card-container-for-four {
-    width: 100%;
-    margin-left: 0%;
-}
-
-.feature_C .container-center {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-    /* .feature_C .card-container-for-two {
-        width: 90%;
-        margin-left: 5%;
-    }
-    .feature_C .card-container-for-three {
+    .background {
+        position: absolute;
         width: 100%;
-        margin-left: 0%;
-    } */
-}
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 
-@media (min-width: 992px) {
-    /* .feature_C .card-container-for-two {
-        width: 90%;
-        margin-left: 5%;
-    } */
-}
+    .top-ww-objs,
+    .bottom-ww-objs {
+        position: relative;
 
-@media (min-width: 1200px) {
-    /* .feature_C .card-container-for-two {
-        width: 90%;
-        margin-left: 5%;
-    } */
+        .top-ww-obj,
+        .bottom-ww-obj {
+            position: relative;
+        }
+    }
+
+    .container {
+        .container-center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .thumbnail-container {
+                margin-right: 15px;
+                position: relative;
+                margin: 30px 15px;
+                background-color: white;
+                min-height: 50px;
+                box-shadow: 0 10px 40px 0 rgba(113, 124, 137, 0.2);
+                padding: 0 45px;
+                border-radius: 7px;
+                transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+
+                &:hover {
+                    box-shadow: 0 16px 32px rgba(113, 124, 137, 0.4);
+                    transform: translateY(-10px);
+                }
+
+                .background {
+                    border-radius: 7px;
+                    overflow: hidden;
+                }
+
+                .content {
+                    position: relative;
+                }
+
+                /* wwManager:start */
+                .contextmenu {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-50%, -50%);
+                    width: 30px;
+                    height: 30px;
+                    color: white;
+                    background-color: #ef811a;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    z-index: 1;
+                }
+                /* wwManager:enb */
+            }
+        }
+    }
 }
 </style>
