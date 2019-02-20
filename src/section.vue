@@ -69,7 +69,6 @@ export default {
     },
     data() {
         return {
-            thumbnailsPerLine: 4,
             maxThumbnailsPerLine: 4,
             columnWidth: { 'width': "calc(25% - 30px)" }
         }
@@ -107,6 +106,10 @@ export default {
                 })
                 needUpdate = true;
             }
+            if (!this.section.data.thumbnailsPerLine) {
+                this.section.data.thumbnailsPerLine = 4;
+                needUpdate = true;
+            }
             if (needUpdate) {
                 this.sectionCtrl.update(this.section);
             }
@@ -140,7 +143,7 @@ export default {
                 this.maxThumbnailsPerLine = 4;
             }
 
-            switch (Math.min(this.thumbnailsPerLine, this.maxThumbnailsPerLine)) {
+            switch (Math.min(this.section.data.thumbnailsPerLine, this.maxThumbnailsPerLine)) {
                 case 1:
                     this.columnWidth = { 'width': "calc(100% - 30px)" };
                     break;
@@ -186,14 +189,16 @@ export default {
             let options = {
                 firstPage: 'FEATURE_C_COLUMN_COUNT',
                 data: {
-                    columnPerLine: this.thumbnailsPerLine
+                    columnPerLine: this.section.data.thumbnailsPerLine
                 },
             }
 
             const result = await wwLib.wwPopups.open(options)
 
             if (result.columnPerLine) {
-                this.thumbnailsPerLine = result.columnPerLine;
+                this.section.data.thumbnailsPerLine = result.columnPerLine;
+
+                this.sectionCtrl.update(this.section);
 
                 this.setThumbnailsPerLine();
             }
@@ -251,7 +256,6 @@ export default {
                 background-color: white;
                 min-height: 50px;
                 box-shadow: 0 10px 40px 0 rgba(113, 124, 137, 0.2);
-                padding: 0 45px;
                 border-radius: 7px;
                 transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 
@@ -287,9 +291,17 @@ export default {
                     cursor: pointer;
                     z-index: 1;
                 }
-                /* wwManager:enb */
+                /* wwManager:end */
             }
         }
     }
 }
+
+/* wwManager:start */
+.ww-editing .thumbnail-container {
+    &:hover {
+        transform: none !important;
+    }
+}
+/* wwManager:end */
 </style>

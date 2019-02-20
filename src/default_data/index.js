@@ -1,8 +1,8 @@
 module.exports = [
     {
-        name: 'my_section',
+        name: 'context',
         storeName: {
-            en_GB: "My first section"
+            en_GB: "Context and Objectives"
         },
         storeDesc: {
             en_GB: "Template for my first section"
