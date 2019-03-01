@@ -17,7 +17,7 @@
                     "font": "",
                     "size": "",
                     "text": {
-                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 2rem; text-align: initial;\"><font data-v-ce08abda=\"\" data-v-625b7cc1=\"\">Contexte et objectifs de votre projet immobilier</font></span></div>"
+                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 2rem; text-align: initial;\"><font data-v-ce08abda=\"\" data-v-625b7cc1=\"\">Contexte et objectifs de votre projet immobilier</font></span></div>"
                     },
                     "align": "",
                     "color": "",
@@ -335,7 +335,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Aligner les ambitions</span></b></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Aligner les ambitions</span></b></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -366,7 +366,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -405,7 +405,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -771,7 +771,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Comprendre le marché</span></b></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Comprendre le marché</span></b></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -802,7 +802,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -841,7 +841,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1207,7 +1207,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Identifier les opportunités</span></b></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Identifier les opportunités</span></b></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1238,7 +1238,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1277,7 +1277,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1643,7 +1643,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Faire le meilleur choix</span></b></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Faire le meilleur choix</span></b></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1674,7 +1674,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -1713,7 +1713,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -2079,7 +2079,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Sécuriser et négocier</span></b></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><b data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: initial;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 1.2rem;\">Sécuriser et négocier</span></b></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -2110,7 +2110,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><hr data-v-ce08abda=\"\" data-v-625b7cc1=\"\" width=\"25%\" style=\"text-align: initial; font-size: medium; font-weight: 400;\"></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",
@@ -2149,7 +2149,7 @@
                                                     "font": "",
                                                     "size": "",
                                                     "text": {
-                                                        "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
+                                                        "fr": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span></div>"
                                                     },
                                                     "align": "",
                                                     "color": "",

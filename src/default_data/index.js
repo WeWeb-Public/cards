@@ -2,10 +2,10 @@ module.exports = [
     {
         name: 'context',
         storeName: {
-            en_GB: "Context and Objectives"
+            en: "Context and Objectives"
         },
         storeDesc: {
-            en_GB: "Template for my first section"
+            en: "Template for my first section"
         }
     }
 ]

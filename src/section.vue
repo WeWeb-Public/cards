@@ -46,15 +46,15 @@ import featureCColumnPerLine from './featureCColumnPerLine.vue'
 wwLib.wwPopups.addPopup('featureCColumnPerLine', featureCColumnPerLine);
 wwLib.wwPopups.addStory('FEATURE_C_COLUMN_COUNT', {
     title: {
-        en_GB: 'Column per line',
-        fr_FR: 'Nombre de colonnes par ligne'
+        en: 'Column per line',
+        fr: 'Nombre de colonnes par ligne'
     },
     type: 'featureCColumnPerLine',
     buttons: {
         FINISH: {
             text: {
-                en_GB: 'Finish',
-                fr_FR: 'Terminer'
+                en: 'Finish',
+                fr: 'Terminer'
             },
             next: false
         }
