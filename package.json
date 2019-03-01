@@ -1,12 +1,11 @@
 {
-    "name": "feature_C",
+    "name": "cards",
     "type": "section",
-    "wewebPublic": "true",
     "repository": {
         "type": "git",
         "url": "https://github.com/WeWeb-Public/feature_C"
     },
-    "version": "0.0.7",
+    "version": "0.0.1",
     "private": true,
     "scripts": {
         "build": "weweb-build",

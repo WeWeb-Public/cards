@@ -1,0 +1,1503 @@
+{
+    "topWwObjs": [
+        {
+            "new": false,
+            "anim": {},
+            "data": {},
+            "link": {
+                "data": {},
+                "type": "none"
+            },
+            "tags": [],
+            "ratio": -1,
+            "hidden": false,
+            "content": {
+                "data": {
+                    "tag": "div",
+                    "font": "",
+                    "size": "",
+                    "text": {
+                        "fr": "<div data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" data-v-625b7cc1=\"\" style=\"font-size: 2rem; text-align: initial;\"><font data-v-ce08abda=\"\" data-v-625b7cc1=\"\">Contexte et objectifs de votre projet immobilier</font></span></div>",
+                        "fr_FR": "<br data-v-ce08abda=\"\">"
+                    },
+                    "align": "",
+                    "color": "",
+                    "classes": [],
+                    "children": []
+                },
+                "type": "ww-text"
+            },
+            "children": {},
+            "paddings": {
+                "lg": {
+                    "top": 100,
+                    "left": "0",
+                    "right": "0",
+                    "bottom": 50
+                }
+            },
+            "uniqueId": 15262876223,
+            "wwVersion": 3
+        }
+    ],
+    "background": {
+        "new": false,
+        "anim": {},
+        "data": {},
+        "link": {
+            "data": {},
+            "type": "none"
+        },
+        "tags": [],
+        "ratio": -1,
+        "hidden": false,
+        "content": {
+            "data": {
+                "color": "white",
+                "style": {
+                    "boxShadow": {
+                        "b": 0,
+                        "c": "",
+                        "s": 0,
+                        "x": 0,
+                        "y": 0
+                    },
+                    "borderColor": null,
+                    "borderStyle": null,
+                    "borderWidth": 0,
+                    "borderRadius": 0
+                },
+                "backgroundColor": "transparent"
+            },
+            "type": "ww-color"
+        },
+        "children": {},
+        "paddings": {},
+        "uniqueId": 6515553091,
+        "wwVersion": 3
+    },
+    "thumbnails": [
+        {
+            "contents": [
+                {
+                    "new": false,
+                    "anim": {},
+                    "data": {},
+                    "link": {
+                        "data": {},
+                        "type": "none"
+                    },
+                    "tags": [],
+                    "ratio": -1,
+                    "hidden": false,
+                    "content": {
+                        "data": {
+                            "config": {
+                                "lg": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "md": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "sm": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "xs": {
+                                    "cols": [
+                                        {
+                                            "align": "2",
+                                            "width": "60",
+                                            "offset": "20",
+                                            "borders": [
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": false
+                                },
+                                "count": 1,
+                                "height": null
+                            },
+                            "columns": [
+                                {
+                                    "wwObjects": [
+                                        {
+                                            "new": false,
+                                            "anim": {},
+                                            "data": {},
+                                            "link": {
+                                                "data": {},
+                                                "type": "none"
+                                            },
+                                            "tags": [],
+                                            "ratio": -1,
+                                            "hidden": false,
+                                            "content": {
+                                                "data": {
+                                                    "icon": "far fa-calendar-alt",
+                                                    "style": {
+                                                        "size": 69,
+                                                        "color": "#EF5350",
+                                                        "fontSize": 45,
+                                                        "gradient": {},
+                                                        "boxShadow": {
+                                                            "b": 0,
+                                                            "c": "",
+                                                            "s": 0,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "borderColor": "#000000",
+                                                        "borderStyle": "none",
+                                                        "borderWidth": 0,
+                                                        "borderRadius": 50,
+                                                        "backgroundColor": "#FFFFFF00"
+                                                    }
+                                                },
+                                                "type": "ww-icon"
+                                            },
+                                            "children": {},
+                                            "paddings": {
+                                                "lg": null,
+                                                "md": null,
+                                                "sm": null,
+                                                "xs": {
+                                                    "top": 20,
+                                                    "left": 30,
+                                                    "right": 30,
+                                                    "bottom": 20
+                                                }
+                                            },
+                                            "uniqueId": 4540873578,
+                                            "wwVersion": 3
+                                        }
+                                    ],
+                                    "background": {
+                                        "new": false,
+                                        "anim": {},
+                                        "data": {},
+                                        "link": {
+                                            "data": {},
+                                            "type": "none"
+                                        },
+                                        "tags": [],
+                                        "ratio": -1,
+                                        "hidden": false,
+                                        "content": {
+                                            "data": {
+                                                "style": {
+                                                    "boxShadow": {
+                                                        "b": 0,
+                                                        "c": "",
+                                                        "s": 0,
+                                                        "x": 0,
+                                                        "y": 0
+                                                    },
+                                                    "borderColor": null,
+                                                    "borderStyle": null,
+                                                    "borderWidth": 0,
+                                                    "borderRadius": 0
+                                                },
+                                                "backgroundColor": "transparent"
+                                            },
+                                            "type": "ww-color"
+                                        },
+                                        "children": {},
+                                        "paddings": {},
+                                        "uniqueId": 15406072565,
+                                        "wwVersion": 3
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "ww-columns"
+                    },
+                    "children": {},
+                    "paddings": {},
+                    "uniqueId": 10349706800,
+                    "wwVersion": 3
+                },
+                {
+                    "uniqueId": 9327156262,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Lorem ipsum</span></div>"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 20
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                },
+                {
+                    "uniqueId": 14177661918,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 50
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                }
+            ],
+            "background": {
+                "new": false,
+                "anim": {},
+                "data": {},
+                "link": {
+                    "data": {},
+                    "type": "none"
+                },
+                "tags": [],
+                "ratio": -1,
+                "hidden": false,
+                "content": {
+                    "data": {
+                        "color": "white",
+                        "style": {
+                            "boxShadow": {
+                                "b": 0,
+                                "c": "",
+                                "s": 0,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "borderColor": null,
+                            "borderStyle": null,
+                            "borderWidth": 0,
+                            "borderRadius": 0
+                        },
+                        "backgroundColor": "transparent"
+                    },
+                    "type": "ww-color"
+                },
+                "children": {},
+                "paddings": {},
+                "uniqueId": 4925320641,
+                "wwVersion": 3
+            }
+        },
+        {
+            "contents": [
+                {
+                    "new": false,
+                    "anim": {},
+                    "data": {},
+                    "link": {
+                        "data": {},
+                        "type": "none"
+                    },
+                    "tags": [],
+                    "ratio": -1,
+                    "hidden": false,
+                    "content": {
+                        "data": {
+                            "config": {
+                                "lg": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "md": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "sm": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "xs": {
+                                    "cols": [
+                                        {
+                                            "align": "2",
+                                            "width": "60",
+                                            "offset": "20",
+                                            "borders": [
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": false
+                                },
+                                "count": 1,
+                                "height": null
+                            },
+                            "columns": [
+                                {
+                                    "wwObjects": [
+                                        {
+                                            "new": false,
+                                            "anim": {},
+                                            "data": {},
+                                            "link": {
+                                                "data": {},
+                                                "type": "none"
+                                            },
+                                            "tags": [],
+                                            "ratio": -1,
+                                            "hidden": false,
+                                            "content": {
+                                                "data": {
+                                                    "icon": "fas fa-cogs",
+                                                    "style": {
+                                                        "size": 69,
+                                                        "color": "#AB47BC",
+                                                        "fontSize": 45,
+                                                        "gradient": {},
+                                                        "boxShadow": {
+                                                            "b": 0,
+                                                            "c": "",
+                                                            "s": 0,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "borderColor": "#000000",
+                                                        "borderStyle": "none",
+                                                        "borderWidth": 0,
+                                                        "borderRadius": 50,
+                                                        "backgroundColor": "#FFFFFF00"
+                                                    }
+                                                },
+                                                "type": "ww-icon"
+                                            },
+                                            "children": {},
+                                            "paddings": {
+                                                "lg": null,
+                                                "md": null,
+                                                "sm": null,
+                                                "xs": {
+                                                    "top": 20,
+                                                    "left": 30,
+                                                    "right": 30,
+                                                    "bottom": 20
+                                                }
+                                            },
+                                            "uniqueId": 13692728692,
+                                            "wwVersion": 3
+                                        }
+                                    ],
+                                    "background": {
+                                        "new": false,
+                                        "anim": {},
+                                        "data": {},
+                                        "link": {
+                                            "data": {},
+                                            "type": "none"
+                                        },
+                                        "tags": [],
+                                        "ratio": -1,
+                                        "hidden": false,
+                                        "content": {
+                                            "data": {
+                                                "style": {
+                                                    "boxShadow": {
+                                                        "b": 0,
+                                                        "c": "",
+                                                        "s": 0,
+                                                        "x": 0,
+                                                        "y": 0
+                                                    },
+                                                    "borderColor": null,
+                                                    "borderStyle": null,
+                                                    "borderWidth": 0,
+                                                    "borderRadius": 0
+                                                },
+                                                "backgroundColor": "transparent"
+                                            },
+                                            "type": "ww-color"
+                                        },
+                                        "children": {},
+                                        "paddings": {},
+                                        "uniqueId": 4568581650,
+                                        "wwVersion": 3
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "ww-columns"
+                    },
+                    "children": {},
+                    "paddings": {},
+                    "uniqueId": 712011509,
+                    "wwVersion": 3
+                },
+                {
+                    "uniqueId": 8647961392,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Lorem ipsum</span></div>"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 20
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                },
+                {
+                    "uniqueId": 3949631643,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 50
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                }
+            ],
+            "background": {
+                "new": false,
+                "anim": {},
+                "data": {},
+                "link": {
+                    "data": {},
+                    "type": "none"
+                },
+                "tags": [],
+                "ratio": -1,
+                "hidden": false,
+                "content": {
+                    "data": {
+                        "color": "white",
+                        "style": {
+                            "boxShadow": {
+                                "b": 0,
+                                "c": "",
+                                "s": 0,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "borderColor": null,
+                            "borderStyle": null,
+                            "borderWidth": 0,
+                            "borderRadius": 0
+                        },
+                        "backgroundColor": "transparent"
+                    },
+                    "type": "ww-color"
+                },
+                "children": {},
+                "paddings": {},
+                "uniqueId": 2976410070,
+                "wwVersion": 3
+            }
+        },
+        {
+            "contents": [
+                {
+                    "new": false,
+                    "anim": {},
+                    "data": {},
+                    "link": {
+                        "data": {},
+                        "type": "none"
+                    },
+                    "tags": [],
+                    "ratio": -1,
+                    "hidden": false,
+                    "content": {
+                        "data": {
+                            "config": {
+                                "lg": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "md": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "sm": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "xs": {
+                                    "cols": [
+                                        {
+                                            "align": "2",
+                                            "width": "60",
+                                            "offset": "20",
+                                            "borders": [
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": false
+                                },
+                                "count": 1,
+                                "height": null
+                            },
+                            "columns": [
+                                {
+                                    "wwObjects": [
+                                        {
+                                            "new": false,
+                                            "anim": {},
+                                            "data": {},
+                                            "link": {
+                                                "data": {},
+                                                "type": "none"
+                                            },
+                                            "tags": [],
+                                            "ratio": -1,
+                                            "hidden": false,
+                                            "content": {
+                                                "data": {
+                                                    "icon": "far fa-building",
+                                                    "style": {
+                                                        "size": 69,
+                                                        "color": "#4CAF50",
+                                                        "fontSize": 45,
+                                                        "gradient": {},
+                                                        "boxShadow": {
+                                                            "b": 0,
+                                                            "c": "",
+                                                            "s": 0,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "borderColor": "#000000",
+                                                        "borderStyle": "none",
+                                                        "borderWidth": 0,
+                                                        "borderRadius": 50,
+                                                        "backgroundColor": "#FFFFFF00"
+                                                    }
+                                                },
+                                                "type": "ww-icon"
+                                            },
+                                            "children": {},
+                                            "paddings": {
+                                                "lg": null,
+                                                "md": null,
+                                                "sm": null,
+                                                "xs": {
+                                                    "top": 20,
+                                                    "left": 30,
+                                                    "right": 30,
+                                                    "bottom": 20
+                                                }
+                                            },
+                                            "uniqueId": 10640221586,
+                                            "wwVersion": 3
+                                        }
+                                    ],
+                                    "background": {
+                                        "new": false,
+                                        "anim": {},
+                                        "data": {},
+                                        "link": {
+                                            "data": {},
+                                            "type": "none"
+                                        },
+                                        "tags": [],
+                                        "ratio": -1,
+                                        "hidden": false,
+                                        "content": {
+                                            "data": {
+                                                "style": {
+                                                    "boxShadow": {
+                                                        "b": 0,
+                                                        "c": "",
+                                                        "s": 0,
+                                                        "x": 0,
+                                                        "y": 0
+                                                    },
+                                                    "borderColor": null,
+                                                    "borderStyle": null,
+                                                    "borderWidth": 0,
+                                                    "borderRadius": 0
+                                                },
+                                                "backgroundColor": "transparent"
+                                            },
+                                            "type": "ww-color"
+                                        },
+                                        "children": {},
+                                        "paddings": {},
+                                        "uniqueId": 14154646807,
+                                        "wwVersion": 3
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "ww-columns"
+                    },
+                    "children": {},
+                    "paddings": {},
+                    "uniqueId": 9626731947,
+                    "wwVersion": 3
+                },
+                {
+                    "uniqueId": 586984753,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Lorem ipsum</span></div>"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 20
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                },
+                {
+                    "uniqueId": 15133083908,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 50
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                }
+            ],
+            "background": {
+                "new": false,
+                "anim": {},
+                "data": {},
+                "link": {
+                    "data": {},
+                    "type": "none"
+                },
+                "tags": [],
+                "ratio": -1,
+                "hidden": false,
+                "content": {
+                    "data": {
+                        "color": "white",
+                        "style": {
+                            "boxShadow": {
+                                "b": 0,
+                                "c": "",
+                                "s": 0,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "borderColor": null,
+                            "borderStyle": null,
+                            "borderWidth": 0,
+                            "borderRadius": 0
+                        },
+                        "backgroundColor": "transparent"
+                    },
+                    "type": "ww-color"
+                },
+                "children": {},
+                "paddings": {},
+                "uniqueId": 7682366143,
+                "wwVersion": 3
+            }
+        },
+        {
+            "contents": [
+                {
+                    "new": false,
+                    "anim": {},
+                    "data": {},
+                    "link": {
+                        "data": {},
+                        "type": "none"
+                    },
+                    "tags": [],
+                    "ratio": -1,
+                    "hidden": false,
+                    "content": {
+                        "data": {
+                            "config": {
+                                "lg": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "md": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "sm": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "xs": {
+                                    "cols": [
+                                        {
+                                            "align": "2",
+                                            "width": "60",
+                                            "offset": "20",
+                                            "borders": [
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": false
+                                },
+                                "count": 1,
+                                "height": null
+                            },
+                            "columns": [
+                                {
+                                    "wwObjects": [
+                                        {
+                                            "new": false,
+                                            "anim": {},
+                                            "data": {},
+                                            "link": {
+                                                "data": {},
+                                                "type": "none"
+                                            },
+                                            "tags": [],
+                                            "ratio": -1,
+                                            "hidden": false,
+                                            "content": {
+                                                "data": {
+                                                    "icon": "fas fa-check",
+                                                    "style": {
+                                                        "size": 69,
+                                                        "color": "#FF5722",
+                                                        "fontSize": 45,
+                                                        "gradient": {},
+                                                        "boxShadow": {
+                                                            "b": 0,
+                                                            "c": "",
+                                                            "s": 0,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "borderColor": "#000000",
+                                                        "borderStyle": "none",
+                                                        "borderWidth": 0,
+                                                        "borderRadius": 50,
+                                                        "backgroundColor": "#FFFFFF00"
+                                                    }
+                                                },
+                                                "type": "ww-icon"
+                                            },
+                                            "children": {},
+                                            "paddings": {
+                                                "lg": null,
+                                                "md": null,
+                                                "sm": null,
+                                                "xs": {
+                                                    "top": 20,
+                                                    "left": 30,
+                                                    "right": 30,
+                                                    "bottom": 20
+                                                }
+                                            },
+                                            "uniqueId": 14254601623,
+                                            "wwVersion": 3
+                                        }
+                                    ],
+                                    "background": {
+                                        "new": false,
+                                        "anim": {},
+                                        "data": {},
+                                        "link": {
+                                            "data": {},
+                                            "type": "none"
+                                        },
+                                        "tags": [],
+                                        "ratio": -1,
+                                        "hidden": false,
+                                        "content": {
+                                            "data": {
+                                                "style": {
+                                                    "boxShadow": {
+                                                        "b": 0,
+                                                        "c": "",
+                                                        "s": 0,
+                                                        "x": 0,
+                                                        "y": 0
+                                                    },
+                                                    "borderColor": null,
+                                                    "borderStyle": null,
+                                                    "borderWidth": 0,
+                                                    "borderRadius": 0
+                                                },
+                                                "backgroundColor": "transparent"
+                                            },
+                                            "type": "ww-color"
+                                        },
+                                        "children": {},
+                                        "paddings": {},
+                                        "uniqueId": 7033302104,
+                                        "wwVersion": 3
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "ww-columns"
+                    },
+                    "children": {},
+                    "paddings": {},
+                    "uniqueId": 11734783249,
+                    "wwVersion": 3
+                },
+                {
+                    "uniqueId": 14692746851,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Lorem ipsum</span></div>"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 20
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                },
+                {
+                    "uniqueId": 9188497675,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 50
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                }
+            ],
+            "background": {
+                "new": false,
+                "anim": {},
+                "data": {},
+                "link": {
+                    "data": {},
+                    "type": "none"
+                },
+                "tags": [],
+                "ratio": -1,
+                "hidden": false,
+                "content": {
+                    "data": {
+                        "color": "white",
+                        "style": {
+                            "boxShadow": {
+                                "b": 0,
+                                "c": "",
+                                "s": 0,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "borderColor": null,
+                            "borderStyle": null,
+                            "borderWidth": 0,
+                            "borderRadius": 0
+                        },
+                        "backgroundColor": "transparent"
+                    },
+                    "type": "ww-color"
+                },
+                "children": {},
+                "paddings": {},
+                "uniqueId": 690686173,
+                "wwVersion": 3
+            }
+        },
+        {
+            "contents": [
+                {
+                    "new": false,
+                    "anim": {},
+                    "data": {},
+                    "link": {
+                        "data": {},
+                        "type": "none"
+                    },
+                    "tags": [],
+                    "ratio": -1,
+                    "hidden": false,
+                    "content": {
+                        "data": {
+                            "config": {
+                                "lg": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "md": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "sm": {
+                                    "cols": null,
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": true
+                                },
+                                "xs": {
+                                    "cols": [
+                                        {
+                                            "align": "2",
+                                            "width": "60",
+                                            "offset": "20",
+                                            "borders": [
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                },
+                                                {
+                                                    "color": "#000000",
+                                                    "style": "solid",
+                                                    "width": 0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "unit": "%",
+                                    "height": 0,
+                                    "ignore": false
+                                },
+                                "count": 1,
+                                "height": null
+                            },
+                            "columns": [
+                                {
+                                    "wwObjects": [
+                                        {
+                                            "new": false,
+                                            "anim": {},
+                                            "data": {},
+                                            "link": {
+                                                "data": {},
+                                                "type": "none"
+                                            },
+                                            "tags": [],
+                                            "ratio": -1,
+                                            "hidden": false,
+                                            "content": {
+                                                "data": {
+                                                    "icon": "fas fa-user-check",
+                                                    "style": {
+                                                        "size": 69,
+                                                        "color": "#808080",
+                                                        "fontSize": 45,
+                                                        "gradient": {},
+                                                        "boxShadow": {
+                                                            "b": 0,
+                                                            "c": "",
+                                                            "s": 0,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "borderColor": "#000000",
+                                                        "borderStyle": "none",
+                                                        "borderWidth": 0,
+                                                        "borderRadius": 50,
+                                                        "backgroundColor": "#FFFFFF00"
+                                                    }
+                                                },
+                                                "type": "ww-icon"
+                                            },
+                                            "children": {},
+                                            "paddings": {
+                                                "lg": null,
+                                                "md": null,
+                                                "sm": null,
+                                                "xs": {
+                                                    "top": 20,
+                                                    "left": 30,
+                                                    "right": 30,
+                                                    "bottom": 20
+                                                }
+                                            },
+                                            "uniqueId": 11771963316,
+                                            "wwVersion": 3
+                                        }
+                                    ],
+                                    "background": {
+                                        "new": false,
+                                        "anim": {},
+                                        "data": {},
+                                        "link": {
+                                            "data": {},
+                                            "type": "none"
+                                        },
+                                        "tags": [],
+                                        "ratio": -1,
+                                        "hidden": false,
+                                        "content": {
+                                            "data": {
+                                                "style": {
+                                                    "boxShadow": {
+                                                        "b": 0,
+                                                        "c": "",
+                                                        "s": 0,
+                                                        "x": 0,
+                                                        "y": 0
+                                                    },
+                                                    "borderColor": null,
+                                                    "borderStyle": null,
+                                                    "borderWidth": 0,
+                                                    "borderRadius": 0
+                                                },
+                                                "backgroundColor": "transparent"
+                                            },
+                                            "type": "ww-color"
+                                        },
+                                        "children": {},
+                                        "paddings": {},
+                                        "uniqueId": 14039663831,
+                                        "wwVersion": 3
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "ww-columns"
+                    },
+                    "children": {},
+                    "paddings": {},
+                    "uniqueId": 7639474980,
+                    "wwVersion": 3
+                },
+                {
+                    "uniqueId": 7372652034,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "<div data-v-ce08abda=\"\" style=\"text-align: center;\"><span data-v-ce08abda=\"\" style=\"text-align: initial;\">Lorem ipsum</span></div>"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 20
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                },
+                {
+                    "uniqueId": 13350554508,
+                    "wwVersion": 3,
+                    "content": {
+                        "type": "ww-text",
+                        "data": {
+                            "text": {
+                                "fr_FR": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                            },
+                            "tag": "div",
+                            "align": "",
+                            "font": "",
+                            "size": "",
+                            "color": "",
+                            "classes": [],
+                            "children": []
+                        }
+                    },
+                    "link": {
+                        "type": "none",
+                        "data": {}
+                    },
+                    "ratio": -1,
+                    "paddings": {
+                        "xs": {
+                            "top": 20,
+                            "left": 30,
+                            "right": 30,
+                            "bottom": 50
+                        }
+                    },
+                    "hidden": false,
+                    "tags": [],
+                    "children": {},
+                    "data": {},
+                    "anim": {},
+                    "new": false
+                }
+            ],
+            "background": {
+                "new": false,
+                "anim": {},
+                "data": {},
+                "link": {
+                    "data": {},
+                    "type": "none"
+                },
+                "tags": [],
+                "ratio": -1,
+                "hidden": false,
+                "content": {
+                    "data": {
+                        "color": "white",
+                        "style": {
+                            "boxShadow": {
+                                "b": 0,
+                                "c": "",
+                                "s": 0,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "borderColor": null,
+                            "borderStyle": null,
+                            "borderWidth": 0,
+                            "borderRadius": 0
+                        },
+                        "backgroundColor": "transparent"
+                    },
+                    "type": "ww-color"
+                },
+                "children": {},
+                "paddings": {},
+                "uniqueId": 14896691634,
+                "wwVersion": 3
+            }
+        }
+    ],
+    "bottomWwObjs": [],
+    "thumbnailsPerLine": "3"
+}
