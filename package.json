@@ -9,6 +9,7 @@
     "private": true,
     "scripts": {
         "build": "weweb-build",
+        "serve": "weweb-serve",
         "serve-manager": "weweb-serve-manager",
         "serve-front": "weweb-serve-front",
         "upload": "weweb-upload"
@@ -38,7 +39,7 @@
         "webpack": "^4.9.1",
         "webpack-cli": "^2.1.4",
         "webpack-dev-server": "^3.1.14",
-        "weweb-client": "^1.0.25"
+        "weweb-client": "^1.0.29"
     },
     "browserslist": [
         "> 1%",
